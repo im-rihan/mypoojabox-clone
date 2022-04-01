@@ -41,7 +41,8 @@
                     </h4>
                 </div>
                 <div class="img">
-                    <img src="./images/logo-optimized.svg" alt="">
+                    <img src="./images/logo-optimized.svg" alt="" id="img-logo-hide">
+                    <img src="./images/nwlogo.svg" alt="" id="img-logo-scroll" style="display:none">
                 </div>
                 <div class="search-cart">
                     <div class="search">
@@ -493,22 +494,60 @@
                     </ul>
                 </div>
             </div>
+        </div>
+        <div class="mobile-link">
+            <ul>
+                <li>
+                    TRACK YOUR ORDEr
+                </li>
+                <li> DAILY HOROSCOPE</li>
+                <li>CUSTOMER CARE</li>
+                <li> INFORMATION</li>
+                <li> ABOUT MY POOJA BOX</li>
+            </ul>
+        </div>
+        <div class="footer-bottom">
+            <div class="inner">
+                <div class="footer-left">
+                    <div class="left">
+                        <p>© 2021. All Rights Reserved.</p>
+                    </div>
+                    <div class="right">
+                        <select>
+                            <option value="IN">India</option>
+                            <option value="global">North America</option>
+                            <option value="global">Central America</option>
+                            <option value="global">South America</option>
+                            <option value="global">Africa</option>
+                            <option value="global">Asia</option>
+                            <option value="global">Europe</option>
+                            <option value="global">Oceania</option>
 
-            <div class="mobile-link">
-                <ul>
-                    <li>
-                        TRACK YOUR ORDEr
-                    </li>
-                    <li> DAILY HOROSCOPE</li>
-                    <li>CUSTOMER CARE</li>
-                    <li> INFORMATION</li>
-                    <li>
-                        ABOUT MY POOJA BOX</li>
-                </ul>
+                        </select>
+                    </div>
+                </div>
+                <div class="footer-right">
+                    <div class="left">
+                        <p>EXPERIENCE MY POOJA BOX APP ON MOBILE<span> :-</span></p>
+                    </div>
+                    <div class="right">
+                        <div class="download-box">
+                            <a href="https://play.google.com/store/apps/details?id=com.androidapp.mypoojabox"
+                                target="_blank"><img width="96" height="32" class=" lazyloaded"
+                                    data-src="//cdn.shopify.com/s/files/1/2090/3151/t/193/assets/google_play_btn.png?v=7396081662837670692"
+                                    alt="Google play"
+                                    src="//cdn.shopify.com/s/files/1/2090/3151/t/193/assets/google_play_btn.png?v=7396081662837670692"></a>
+                            <a href="https://itunes.apple.com/in/app/mypoojabox/id1271217214?mt=8" target="_blank"><img
+                                    width="96" height="32" class=" lazyloaded"
+                                    data-src="//cdn.shopify.com/s/files/1/2090/3151/t/193/assets/ios_btn.png?v=2500216566077302367"
+                                    alt="Apple Store"
+                                    src="//cdn.shopify.com/s/files/1/2090/3151/t/193/assets/ios_btn.png?v=2500216566077302367"></a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </footer>
-
 
 
 
@@ -519,12 +558,33 @@
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
     <script>
-        $('.item-header').slick({
-            slidesToShow: 6,
-            slidesToScroll: 1,
-            autoplay: true,
-            autoplaySpeed: 2000,
-        });
+        $(document).ready(function () {
+            $('.item-header').slick({
+                slidesToShow: 6,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 2000,
+            });
+
+            $(window).scroll(() => {
+                if (window.scrollY > 30) {
+                    $("#top-header-bg").css("display", "none")
+                    $("#img-logo-hide").css("display", "none")
+                    $("#img-logo-scroll").css("display", "block")
+
+                } else if (window.scrollY < 1) {
+                    $("#top-header-bg").css("display", "block")
+                    $("#img-logo-scroll").css("display", "none")
+                    $("#img-logo-hide").css("display", "block")
+                }
+            })
+
+
+            // return () => $(window).off("scroll")
+
+
+        })
+
     </script>
 </body>
 
